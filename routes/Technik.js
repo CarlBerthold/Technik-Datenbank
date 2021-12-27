@@ -6,6 +6,9 @@ const router = require("express").Router();
 // STATUS 201
 // ALL
 
+const fileUploader = require("../config/cloudinary.config");
+
+
 router.get('/', (req, res, next) => {
   Technik.find()
   .then(technik => {
@@ -14,18 +17,35 @@ router.get('/', (req, res, next) => {
   .catch(err => next(err));
 }) 
 
+router.post('/upload', fileUploader.single("imgUrl"), (req, res, next) => {
+  console.log('file is: ', req.file)
+
+  if (!req.file) {
+    next(new Error("no file uploaded"));
+    return;
+  }
+  res.json({ secure_url: req.file.path });
+});
+
+
 // POST TO MONGO
 // INSOMNIA
 // STATUS 201
 // CREATE
 
-router.post('/', (req, res, next) => {
-  const { name, tarId, gekauft, status } = req.body;
+router.post('/add', (req, res, next) => {
+  const { hersteller, art, watt, inventarnummer, geprüft, jahr, bemerkung, besitzer, anzahl, imgUrl} = req.body;
   Technik.create({
-    name,
-    tarId
-    // gekauft: Number,
-    // status: Boolean
+    hersteller,
+    art,
+    watt,
+    inventarnummer,
+    geprüft,
+    jahr,
+    bemerkung,
+    besitzer,
+    anzahl,
+    imgUrl
   })
   .then(technik => {
     res.status(201).json(technik);

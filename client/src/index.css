@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.AddBox{
+  margin: 0px;
+  padding: 10px;
+  background-color: rgb 10, 17, 40;
+}
