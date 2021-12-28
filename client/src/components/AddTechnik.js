@@ -74,65 +74,64 @@ export default function AddTechnik(props) {
     
     
     return (
+    <div className="AddCard"> 
         <div className="AddBox">
-        <div>
-            <>
-            <h3>add Technik</h3>
+            
+            
+        <>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="hersteller">hersteller:</label>
-                <input
-                    type="text"
-                    value={hersteller}
-                    onChange={e => setHersteller(e.target.value)}
-                />
+            <h3>Ab in meine Sammlung damit</h3>
+            <ul>
+                <li>
+                    <label htmlFor="hersteller">hersteller:</label>
+                    <input type="text" value={hersteller}
+                    onChange={e => setHersteller(e.target.value)}/>
+                </li>
             
-                <label htmlFor="art">Art</label>
-                <input
-                    type="text"
-                    value={art}
-                    onChange={e => setArt(e.target.value)}
-                />
+                <li>
+                    <label htmlFor="art">Art</label>
+                    <input type="text" value={art}
+                    onChange={e => setArt(e.target.value)}/>
+                </li>
             
-                <label htmlFor="watt">Watt</label>
-                <input
-                    type="text"
-                    value={watt}
-                    onChange={e => setWatt(e.target.value)}
-                />
+                <li>
+                    <label htmlFor="watt">Watt</label>
+                    <input type="text"value={watt}
+                    onChange={e => setWatt(e.target.value)}/>
+                </li>
             
-                <label htmlFor="inventarnummer">Inventarnummer:</label>
-                <input
-                    type="text"
-                    value={inventarnummer}
-                    onChange={e => setInventarNummer(e.target.value)}
-                />
+                <li>
+                    <label htmlFor="inventarnummer">Inventarnummer:</label>
+                    <input type="text" value={inventarnummer}
+                    onChange={e => setInventarNummer(e.target.value)}/>
+                </li>
             
-                <label htmlFor="geprüft">Geprüft</label>
-                <input
-                    type="checkbox"
-                    value={geprüft}
-                    onChange={e => setGeprüft(e.target.value)}
-                />
+                <li>
+                    <label htmlFor="geprüft">Geprüft</label>
+                    <input type="checkbox"value={geprüft}
+                    onChange={e => setGeprüft(e.target.value)}/>
+                </li>
 
 
                 {/* dropdown menu geprüft im jahr  */}
 
                 
-                <label for="jahr">Wann</label>
-  <select name="jahr" id="jahr">
-    <option value="2000">2000</option>
-    <option value="2001">2001</option>
-    <option value="2002">2000</option>
-    <option value="2003">2003</option>
-    <option value="2004">2004</option>
-    <option value="2005">2005</option>
-    <option value="2006">2006</option>
-    <option value="2007">2007</option>
-    <option value="2008">2008</option>
-    <option value="2009">2009</option>
-    <option value="2010">2010</option>
-    onChange={e => setJahr(e.target.value)}
-  </select>
+                <li>
+                    <label htmlFor="jahr">Wann</label>
+                    <select name="jahr" id="jahr" onChange={e => setJahr(e.target.value)}>
+                        <option value="2000">2000</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">2000</option>
+                        <option value="2003">2003</option>
+                        <option value="2004">2004</option>
+                        <option value="2005">2005</option>
+                        <option value="2006">2006</option>
+                        <option value="2007">2007</option>
+                        <option value="2008">2008</option>
+                        <option value="2009">2009</option>
+                        <option value="2010">2010</option>
+                    </select>
+                </li>
   
 
 
@@ -142,42 +141,40 @@ export default function AddTechnik(props) {
                     option value="2000">2000 
                     type="text"
                     value={jahr}
-                    
-                
-
- */}
+                */}
 
 
             
-                <label htmlFor="bemerkung">Bemerkung</label>
-                <input
-                    type="text"
-                    value={bemerkung}
-                    onChange={e => setBemerkung(e.target.value)}
-                />
+                <li>
+                    <label htmlFor="bemerkung">Bemerkung</label>
+                    <input type="text" value={bemerkung}
+                    onChange={e => setBemerkung(e.target.value)}/>
+                </li> 
             
-                <label htmlFor="besitzer">Besitzer</label>
-                <input
-                    type="text"
-                    value={besitzer}
-                    onChange={e => setBesitzer(e.target.value)}
-                />
+                <li>
+                    <label htmlFor="besitzer">Besitzer</label>
+                    <input type="text" value={besitzer}
+                    onChange={e => setBesitzer(e.target.value)}/>
+                </li> 
             
-                <label htmlFor="anzahl">Anzahl</label>
-                <input
-                    type="text"
-                    value={anzahl}
-                    onChange={e => setAnzahl(e.target.value)}
-                />
+                <li>
+                    <label htmlFor="anzahl">Anzahl</label>
+                    <input type="text" value={anzahl}
+                    onChange={e => setAnzahl(e.target.value)}/>
+                </li> 
             
-                <input type="File" name="imgUrl"
-				onChange={handleFileUpload} />
-				{imgUrl && <img src={imgUrl} alt="err" style={{ height: '150px '}}/> }
-                <button type="submit">Add this Technik</button>
+                <li>
+                    <input type="File" name="imgUrl"
+				    onChange={handleFileUpload} />
+				    {imgUrl && <img src={imgUrl} alt="err" style={{ height: '150px '}}/> }
+                </li>    
+            <button type="submit">Add this Technik</button>
+            </ul>
             </form>
-            </>
+
+        </>
+
         </div>
-        </div>
-        
+    </div>
     )
 }

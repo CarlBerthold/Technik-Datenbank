@@ -21,7 +21,7 @@ export default function TechnikDetailsPage(props) {
     
     useEffect(() => {
         getTechnik();
-    }, [])
+    },)
 
     return (
         <div>            
